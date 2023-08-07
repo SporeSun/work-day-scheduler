@@ -2,12 +2,17 @@
 $( document ).ready(function () {
   $(function () {
     // TODO: Add code to display the current date in the header of the page.
+    // Display the current day at the top of the calendar
+
+    $("#currentDay").text(dayjs().format("dddd, MMMM D"));
+
     // TODO: Add code to apply the past, present, or future class to each time
     // block by comparing the id to the current hour. HINTS: How can the id
     // attribute of each time-block be used to conditionally add or remove the
     // past, present, and future classes? How can Day.js be used to get the
     // current hour in 24-hour time?
     // Function to color code the time blocks based on past, present, or future
+    var currentHour = dayjs().hour();
     function updateTimeBlocks() {
       var currentHour = dayjs().hour();
   
